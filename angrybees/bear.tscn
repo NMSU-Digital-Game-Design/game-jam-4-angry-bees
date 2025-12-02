@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctm0cx471tbyr"]
+
+[ext_resource type="Script" uid="uid://cejjd8k5cuida" path="res://bear.gd" id="1_8ceia"]
+[ext_resource type="Texture2D" uid="uid://dkj3i1v8mv0bi" path="res://bear.jpeg" id="2_balfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
+size = Vector2(224.5, 150)
+
+[node name="Bear" type="CharacterBody2D"]
+script = ExtResource("1_8ceia")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-49, 15.5)
+scale = Vector2(0.673333, 0.815476)
+texture = ExtResource("2_balfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-50, 15)
+shape = SubResource("RectangleShape2D_cm0pq")

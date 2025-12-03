@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr8oungw0oo34"]
+
+[ext_resource type="Script" uid="uid://xaelip4t1qe1" path="res://flower.gd" id="1_xqjmx"]
+[ext_resource type="Texture2D" uid="uid://cfs77ofthk5ku" path="res://icon.svg" id="2_nk7og"]
+[ext_resource type="PackedScene" uid="uid://bomrgu3x76df8" path="res://pollen.tscn" id="3_nk7og"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq7e0"]
+size = Vector2(34, 454)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nk7og"]
+
+[node name="PollenMiniGame" type="Node2D"]
+
+[node name="Flower" type="StaticBody2D" parent="."]
+position = Vector2(130, 414)
+script = ExtResource("1_xqjmx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_nq7e0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flower"]
+scale = Vector2(0.28125, 3.67188)
+texture = ExtResource("2_nk7og")
+
+[node name="ShakeFlowerButton" type="Button" parent="."]
+offset_left = 849.0
+offset_top = 50.0
+offset_right = 909.0
+offset_bottom = 81.0
+scale = Vector2(2.80951, 2.80951)
+text = "Shake!"
+
+[node name="Pollen" parent="." instance=ExtResource("3_nk7og")]
+
+[node name="Boundary" type="Area2D" parent="."]
+position = Vector2(-3, 589)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+shape = SubResource("WorldBoundaryShape2D_nk7og")
+
+[connection signal="pressed" from="ShakeFlowerButton" to="Flower" method="shake"]

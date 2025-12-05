@@ -6,14 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
 size = Vector2(224.5, 150)
 
-[node name="Bear" type="CharacterBody2D"]
+[node name="Bear" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_8ceia")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-49, 15.5)
 scale = Vector2(0.673333, 0.815476)
 texture = ExtResource("2_balfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-50, 15)
 shape = SubResource("RectangleShape2D_cm0pq")

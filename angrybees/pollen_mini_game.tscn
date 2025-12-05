@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr8oungw0oo34"]
+[gd_scene load_steps=5 format=3 uid="uid://dr8oungw0oo34"]
 
 [ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://flower.tscn" id="1_xqjmx"]
 [ext_resource type="PackedScene" uid="uid://bomrgu3x76df8" path="res://pollen.tscn" id="3_nk7og"]
+[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_nq7e0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nk7og"]
 normal = Vector2(0.0116271, -0.999932)
@@ -28,5 +29,7 @@ offset_right = 909.0
 offset_bottom = 81.0
 scale = Vector2(2.80951, 2.80951)
 text = "Shake!"
+
+[node name="Bear" parent="." instance=ExtResource("3_nq7e0")]
 
 [connection signal="pressed" from="ShakeFlowerButton" to="Flower" method="shake"]

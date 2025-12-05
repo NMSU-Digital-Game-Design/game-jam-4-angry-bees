@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr8oungw0oo34"]
+
+[ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://flower.tscn" id="1_xqjmx"]
+[ext_resource type="PackedScene" uid="uid://bomrgu3x76df8" path="res://pollen.tscn" id="3_nk7og"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nk7og"]
+normal = Vector2(0.0116271, -0.999932)
+
+[node name="PollenMiniGame" type="Node2D"]
+
+[node name="Pollen" parent="." instance=ExtResource("3_nk7og")]
+position = Vector2(448, 196)
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+position = Vector2(334, 586)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(29, 56)
+shape = SubResource("WorldBoundaryShape2D_nk7og")
+
+[node name="Flower" parent="." instance=ExtResource("1_xqjmx")]
+position = Vector2(130, 414)
+
+[node name="ShakeFlowerButton" type="Button" parent="."]
+offset_left = 849.0
+offset_top = 50.0
+offset_right = 909.0
+offset_bottom = 81.0
+scale = Vector2(2.80951, 2.80951)
+text = "Shake!"
+
+[connection signal="pressed" from="ShakeFlowerButton" to="Flower" method="shake"]

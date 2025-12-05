@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bomrgu3x76df8"]
+
+[ext_resource type="Texture2D" uid="uid://cfs77ofthk5ku" path="res://icon.svg" id="1_1woch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rge36"]
+radius = 31.0161
+
+[node name="Pollen" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(12.155, 40.884, 0, 1)
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("1_1woch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rge36")

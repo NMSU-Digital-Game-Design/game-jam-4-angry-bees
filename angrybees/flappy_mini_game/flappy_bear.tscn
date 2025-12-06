@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ue2e4xh2skvh"]
+
+[ext_resource type="Script" uid="uid://cgalheab7m36d" path="res://flappy_mini_game/flappy_bear.gd" id="1_fwm0w"]
+[ext_resource type="Texture2D" uid="uid://dkj3i1v8mv0bi" path="res://bear.jpeg" id="2_e6bhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uelvh"]
+size = Vector2(123.5, 90)
+
+[node name="FlappyBear" type="CharacterBody2D"]
+script = ExtResource("1_fwm0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.393333, 0.5)
+texture = ExtResource("2_e6bhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_uelvh")

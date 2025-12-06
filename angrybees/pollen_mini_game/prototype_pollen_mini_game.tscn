@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr8oungw0oo34"]
 
-[ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://flower.tscn" id="1_xqjmx"]
-[ext_resource type="PackedScene" uid="uid://bomrgu3x76df8" path="res://pollen.tscn" id="3_nk7og"]
-[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_nq7e0"]
+[ext_resource type="PackedScene" uid="uid://bomrgu3x76df8" path="res://pollen_mini_game/pollen.tscn" id="1_rfqgp"]
+[ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://pollen_mini_game/flower.tscn" id="2_7pwmh"]
+[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_enbag"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nk7og"]
 normal = Vector2(0.0116271, -0.999932)
 
-[node name="PollenMiniGame" type="Node2D"]
+[node name="PrototypePollenMiniGame" type="Node2D"]
 
-[node name="Pollen" parent="." instance=ExtResource("3_nk7og")]
+[node name="Pollen" parent="." instance=ExtResource("1_rfqgp")]
 position = Vector2(448, 196)
 
 [node name="Boundary" type="StaticBody2D" parent="."]
@@ -19,7 +19,7 @@ position = Vector2(334, 586)
 position = Vector2(29, 56)
 shape = SubResource("WorldBoundaryShape2D_nk7og")
 
-[node name="Flower" parent="." instance=ExtResource("1_xqjmx")]
+[node name="Flower" parent="." instance=ExtResource("2_7pwmh")]
 position = Vector2(130, 414)
 
 [node name="ShakeFlowerButton" type="Button" parent="."]
@@ -30,6 +30,6 @@ offset_bottom = 81.0
 scale = Vector2(2.80951, 2.80951)
 text = "Shake!"
 
-[node name="Bear" parent="." instance=ExtResource("3_nq7e0")]
+[node name="Bear" parent="." instance=ExtResource("3_enbag")]
 
 [connection signal="pressed" from="ShakeFlowerButton" to="Flower" method="shake"]

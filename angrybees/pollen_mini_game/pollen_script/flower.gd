@@ -6,7 +6,7 @@ extends StaticBody2D
 var times_shaken: int = 0
 var number_of_shakes_needed: int
 var can_be_shaken: bool = true
-var pollen_scene:= preload("res://pollen.tscn")
+var pollen_scene:= preload("res://pollen_mini_game/pollen.tscn")
 const pollen_max:= 6
 var pollen_count:= 0
 var pollen_amount

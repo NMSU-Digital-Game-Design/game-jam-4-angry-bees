@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b54d40xul4t18"]
 
-[ext_resource type="Script" uid="uid://xaelip4t1qe1" path="res://flower.gd" id="1_nageh"]
+[ext_resource type="Script" uid="uid://xaelip4t1qe1" path="res://pollen_mini_game/pollen_script/flower.gd" id="1_nageh"]
 [ext_resource type="Texture2D" uid="uid://cfs77ofthk5ku" path="res://icon.svg" id="2_511j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq7e0"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 150
 var has_honey := false
-
+var pollen_inv = PlayerVariable.pollen_inv
 func _physics_process(delta):
 	var dir := Vector2.ZERO
 

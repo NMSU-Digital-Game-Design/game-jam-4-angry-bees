@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://ouau77857vi1"]
+[gd_scene load_steps=6 format=4 uid="uid://ouau77857vi1"]
 
-[ext_resource type="Texture2D" uid="uid://qvato7wcln46" path="res://assets&Images/mainSceneBkg.png" id="1_vqu65"]
-[ext_resource type="Texture2D" uid="uid://c1fhogvuhaomh" path="res://assets&Images/land_assets.png" id="2_wijv2"]
+[ext_resource type="Texture2D" uid="uid://qvato7wcln46" path="res://Assets&Images/mainSceneBkg.png" id="1_vqu65"]
+[ext_resource type="Texture2D" uid="uid://c1fhogvuhaomh" path="res://Assets&Images/land_assets.png" id="2_wijv2"]
+[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_conwe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijv2"]
 texture = ExtResource("2_wijv2")
@@ -128,3 +129,6 @@ position = Vector2(1132, 0)
 scale = Vector2(0.602083, 0.596296)
 texture = ExtResource("1_vqu65")
 centered = false
+
+[node name="Bear" parent="." instance=ExtResource("3_conwe")]
+position = Vector2(404, 428)

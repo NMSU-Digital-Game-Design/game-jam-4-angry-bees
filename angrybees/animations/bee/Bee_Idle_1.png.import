@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1fhogvuhaomh"
-path="res://.godot/imported/land_assets.png-e3bb440242ffc1541fc96ccffaa6c3ce.ctex"
+uid="uid://digbfdxhcco1w"
+path="res://.godot/imported/Bee_Idle_1.png-3446b2b2fb80a8acfd14dc5498548e05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets&Images/land_assets.png"
-dest_files=["res://.godot/imported/land_assets.png-e3bb440242ffc1541fc96ccffaa6c3ce.ctex"]
+source_file="res://animations/bee/Bee_Idle_1.png"
+dest_files=["res://.godot/imported/Bee_Idle_1.png-3446b2b2fb80a8acfd14dc5498548e05.ctex"]
 
 [params]
 

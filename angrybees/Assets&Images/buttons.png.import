@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1fhogvuhaomh"
-path="res://.godot/imported/land_assets.png-e3bb440242ffc1541fc96ccffaa6c3ce.ctex"
+uid="uid://g44dv67uxn5i"
+path="res://.godot/imported/buttons.png-d3bca829dd1f4b67bf8e6aaafd83301f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets&Images/land_assets.png"
-dest_files=["res://.godot/imported/land_assets.png-e3bb440242ffc1541fc96ccffaa6c3ce.ctex"]
+source_file="res://Assets&Images/buttons.png"
+dest_files=["res://.godot/imported/buttons.png-d3bca829dd1f4b67bf8e6aaafd83301f.ctex"]
 
 [params]
 

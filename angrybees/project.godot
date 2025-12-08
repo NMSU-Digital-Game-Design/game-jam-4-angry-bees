@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AngryBees"
-run/main_scene="uid://c2aby2kj4cuw5"
+run/main_scene="uid://bl70fdk1ry3fv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

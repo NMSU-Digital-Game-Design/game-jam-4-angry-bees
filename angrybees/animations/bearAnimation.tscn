@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbo0d70vepfng"]
+[gd_scene load_steps=13 format=3 uid="uid://bwequ8u6qyoj5"]
 
 [ext_resource type="Texture2D" uid="uid://bhapy7atoq2g5" path="res://animations/bear/idle.png" id="1_u0kvd"]
 [ext_resource type="Texture2D" uid="uid://cki1wwqs4nn2e" path="res://animations/bear/walk.png" id="2_npp1k"]
@@ -83,6 +83,5 @@ animation = &"walk"
 frame_progress = 0.844756
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-5, 16)
 shape = SubResource("RectangleShape2D_et265")

@@ -8,8 +8,12 @@ func _physics_process(delta):
 
 	# Arrow-key movement (uses built-in UI actions)
 	if Input.is_action_pressed("right"):
+		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.flip_h = false
 		dir.x += 1
 	if Input.is_action_pressed("left"):
+		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.flip_h = true
 		dir.x -= 1
 	if Input.is_action_pressed("down"):
 		dir.y += 1

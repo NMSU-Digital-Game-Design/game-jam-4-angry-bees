@@ -1,9 +1,46 @@
-[gd_scene load_steps=20 format=3 uid="uid://ctm0cx471tbyr"]
+[gd_scene load_steps=30 format=3 uid="uid://ctm0cx471tbyr"]
 
 [ext_resource type="Script" uid="uid://cejjd8k5cuida" path="res://bear.gd" id="1_8ceia"]
 [ext_resource type="Texture2D" uid="uid://bhapy7atoq2g5" path="res://animations/bear/idle.png" id="2_balfo"]
+[ext_resource type="Texture2D" uid="uid://m712a4cvpcce" path="res://animations/bear/fly.png" id="2_py70x"]
 [ext_resource type="Texture2D" uid="uid://cki1wwqs4nn2e" path="res://animations/bear/walk.png" id="3_hq7sg"]
 [ext_resource type="Texture2D" uid="uid://y7stwwplxe5u" path="res://Assets&Images/susBar.png" id="4_hq7sg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvex4"]
+atlas = ExtResource("2_py70x")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylsb8"]
+atlas = ExtResource("2_py70x")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx3mo"]
+atlas = ExtResource("2_py70x")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnx06"]
+atlas = ExtResource("2_py70x")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idrtj"]
+atlas = ExtResource("2_py70x")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u0l7"]
+atlas = ExtResource("2_py70x")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiynv"]
+atlas = ExtResource("2_py70x")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siw0v"]
+atlas = ExtResource("2_py70x")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h6af"]
+atlas = ExtResource("2_py70x")
+region = Rect2(256, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrxeh"]
 atlas = ExtResource("2_balfo")
@@ -55,6 +92,38 @@ region = Rect2(192, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_py70x"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvex4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylsb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx3mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnx06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idrtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u0l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiynv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siw0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h6af")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jrxeh")
@@ -109,15 +178,15 @@ size = Vector2(42, 29.9226)
 atlas = ExtResource("4_hq7sg")
 region = Rect2(0, 0, 256, 69.5)
 
-[node name="Bear" type="CharacterBody2D"]
+[node name="BearGeneral" type="CharacterBody2D"]
 script = ExtResource("1_8ceia")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(150, 50)
 sprite_frames = SubResource("SpriteFrames_py70x")
-animation = &"walk"
-frame_progress = 0.659628
+animation = &"fly"
+frame_progress = 0.540812
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false

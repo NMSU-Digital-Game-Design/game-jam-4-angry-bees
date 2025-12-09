@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed := 150
 var has_honey := false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var dir := Vector2.ZERO
 
 	#GENERAL FOR TESTING NEEDS CHANGE FOR JUMPING AND REMOVE FLYING

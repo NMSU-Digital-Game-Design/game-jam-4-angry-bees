@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbpx8sjpt47gf"]
+
+[ext_resource type="Texture2D" uid="uid://cinmtjhy6bdhg" path="res://AssetsImages/loseEndScene.png" id="1_hwsh5"]
+
+[node name="loseEndScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.561508, 0.317355)
+texture = ExtResource("1_hwsh5")

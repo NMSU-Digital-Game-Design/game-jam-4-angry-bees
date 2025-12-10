@@ -48,4 +48,4 @@ texture = ExtResource("1_vqu65")
 centered = false
 
 [node name="Bear" parent="." instance=ExtResource("3_conwe")]
-position = Vector2(404, 428)
+position = Vector2(404, 427)

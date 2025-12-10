@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	time_left_label.text = str("Time Remaining: ", wait_time)
 
 func end_mini_game():
-	pass
+	get_tree().change_scene_to_file("res://sorting_mini_game.tscn")
 
 func _on_time_left_timeout() -> void:
 	if wait_time == 0:

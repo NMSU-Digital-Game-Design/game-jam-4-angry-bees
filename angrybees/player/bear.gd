@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 150
+@export var speed := 400
 var has_honey := false
 var pollen_inv = PlayerVariable.pollen_inv
 

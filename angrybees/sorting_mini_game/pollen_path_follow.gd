@@ -9,6 +9,8 @@ var bad_pollen: int = 0
 var good_pollen: int = 0
 var is_it_bad: bool
 signal pollen_info
+signal end_mini_game
+
 func _ready() -> void:
 	if pollen_count == 0:
 		pollen_count = 5
@@ -25,7 +27,9 @@ func _process(delta: float) -> void:
 			pollen_instance.queue_free()
 			pollen_instance = null
 			spawn_pollen()
-
+	if pollen_count <= 0:
+		end_mini_game.emit()
+		
 func spawn_pollen():
 	if pollen_count == 0:
 		print("Mini-game end!")
@@ -66,6 +70,8 @@ func good_pollen_spawn():
 
 func _on_sorting_mini_game_dump_pollen() -> void:
 	if pollen_instance:
+		print("Deleting")
 		pollen_instance.queue_free()
 		pollen_instance = null
+		progress_ratio = 0
 		spawn_pollen()

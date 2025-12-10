@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x8jd54jupgq7"
-path="res://.godot/imported/menuBkg.png-f54eab016182abeab5a02d679c283fdf.ctex"
+uid="uid://c1fhogvuhaomh"
+path="res://.godot/imported/land_assets.png-34f6b6153e675244c8178cbf7b1a8fb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets&Images/menuBkg.png"
-dest_files=["res://.godot/imported/menuBkg.png-f54eab016182abeab5a02d679c283fdf.ctex"]
+source_file="res://AssetsImages/land_assets.png"
+dest_files=["res://.godot/imported/land_assets.png-34f6b6153e675244c8178cbf7b1a8fb1.ctex"]
 
 [params]
 

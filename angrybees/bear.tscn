@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhapy7atoq2g5" path="res://animations/bear/idle.png" id="2_balfo"]
 [ext_resource type="Texture2D" uid="uid://m712a4cvpcce" path="res://animations/bear/fly.png" id="2_py70x"]
 [ext_resource type="Texture2D" uid="uid://cki1wwqs4nn2e" path="res://animations/bear/walk.png" id="3_hq7sg"]
-[ext_resource type="Texture2D" uid="uid://y7stwwplxe5u" path="res://Assets&Images/susBar.png" id="4_hq7sg"]
+[ext_resource type="Texture2D" uid="uid://y7stwwplxe5u" path="res://AssetsImages/susBar.png" id="4_hq7sg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvex4"]
 atlas = ExtResource("2_py70x")

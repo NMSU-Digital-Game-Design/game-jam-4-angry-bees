@@ -12,7 +12,7 @@ func _ready() -> void:
 	ready_label.text = "Get ready..."
 	get_tree().paused = true
 func end_game_bad_end():
-	print("Game Over!")
+	get_tree().change_scene_to_file("res://endings/bad_end/bad_ending_scene.tscn")
 
 
 func _on_get_ready_time_timeout() -> void:

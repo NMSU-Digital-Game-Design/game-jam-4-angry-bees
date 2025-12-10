@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b54d40xul4t18"]
+
+[ext_resource type="Script" uid="uid://xaelip4t1qe1" path="res://pollen_mini_game/pollen_script/flower.gd" id="1_nageh"]
+[ext_resource type="Texture2D" uid="uid://cfs77ofthk5ku" path="res://icon.svg" id="2_511j0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq7e0"]
+size = Vector2(34, 454)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nageh"]
+radius = 92.0
+height = 492.0
+
+[node name="Flower" type="StaticBody2D"]
+script = ExtResource("1_nageh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_nq7e0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.28125, 3.67188)
+texture = ExtResource("2_511j0")
+
+[node name="PollenSpawn" type="Marker2D" parent="."]
+position = Vector2(50, -201)
+
+[node name="ReleasePollenTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="DetectPlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayer"]
+shape = SubResource("CapsuleShape2D_nageh")
+
+[connection signal="timeout" from="ReleasePollenTimer" to="." method="timer_time_out"]
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="DetectPlayer" to="." method="_on_detect_player_body_exited"]

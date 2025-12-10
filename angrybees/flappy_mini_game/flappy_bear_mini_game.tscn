@@ -138,23 +138,14 @@ position = Vector2(2042, 205)
 [node name="Wall6" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
 position = Vector2(2553, -119)
 
-[node name="Wall7" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
-position = Vector2(2987, 40)
-
-[node name="Wall8" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
-position = Vector2(3401, 223)
-
-[node name="Wall9" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
-position = Vector2(3978, 20)
-
 [node name="Wall10" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
-position = Vector2(4503, 360)
+position = Vector2(2885, 21)
 
 [node name="StartingLocation" type="Marker2D" parent="LeveL"]
 position = Vector2(-397.053, 308.039)
 
 [node name="HoneyPt" type="Area2D" parent="LeveL"]
-position = Vector2(4581, 651)
+position = Vector2(2963, 312)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="LeveL/HoneyPt"]

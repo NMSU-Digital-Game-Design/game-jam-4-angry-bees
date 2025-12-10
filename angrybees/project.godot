@@ -22,7 +22,6 @@ PlayerVariable="*res://player_variable.gd"
 [global_group]
 
 player=""
-pollen=""
 
 [input]
 

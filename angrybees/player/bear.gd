@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 400
+@export var speed := 300
 var has_honey := false
 var pollen_inv = PlayerVariable.pollen_inv
 
@@ -12,16 +12,16 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		$AnimatedSprite2D.play("walk")
 		$AnimatedSprite2D.flip_h = false
-		dir.x += speed
+		dir.x += 1
 	if Input.is_action_pressed("left"):
 		$AnimatedSprite2D.play("walk")
 		$AnimatedSprite2D.flip_h = true
-		dir.x -= speed
+		dir.x -= 1
 	if Input.is_action_pressed("down"):
-		dir.y += speed
+		dir.y += 1
 	if Input.is_action_pressed("up"):
 		$AnimatedSprite2D.play("fly")
-		dir.y -= speed
+		dir.y -= 1
 	if Input.is_action_just_released("right") || Input.is_action_just_released("left"):
 		$AnimatedSprite2D.play("idle")
 

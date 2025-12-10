@@ -28,6 +28,6 @@ func _on_go_timer_timeout() -> void:
 
 
 func _on_honey_pt_body_entered(body: Node2D) -> void:
-	# ending???
-	
-	pass
+	#  good ending
+	if body.is_in_group("player"):
+		print("Got the Honey!")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qvato7wcln46" path="res://AssetsImages/mainSceneBkg.png" id="1_vqu65"]
 [ext_resource type="Texture2D" uid="uid://c1fhogvuhaomh" path="res://AssetsImages/land_assets.png" id="2_wijv2"]
-[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_conwe"]
+[ext_resource type="PackedScene" uid="uid://ce1g4ap0kr6ig" path="res://player/bear.tscn" id="3_conwe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijv2"]
 texture = ExtResource("2_wijv2")
@@ -48,4 +48,4 @@ texture = ExtResource("1_vqu65")
 centered = false
 
 [node name="Bear" parent="." instance=ExtResource("3_conwe")]
-position = Vector2(404, 428)
+position = Vector2(404, 427)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccqvldl78ghcm"]
+
+[ext_resource type="AudioStream" uid="uid://fkfpel2vwam3" path="res://audio/himrfrog.mp3" id="1_jdg4w"]
+
+[node name="YoureNotSupposedToBeHere" type="AudioStreamPlayer"]
+stream = ExtResource("1_jdg4w")
+autoplay = true

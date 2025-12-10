@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnc117navssi1"]
+
+[ext_resource type="Texture2D" uid="uid://cr2dcrhsxniwf" path="res://AssetsImages/winEndScene.png" id="1_34773"]
+
+[node name="winEndScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.561475, 0.314804)
+texture = ExtResource("1_34773")

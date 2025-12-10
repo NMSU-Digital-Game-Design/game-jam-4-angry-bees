@@ -56,6 +56,10 @@ centered = false
 [node name="Bear" parent="." instance=ExtResource("3_conwe")]
 position = Vector2(419, 463)
 
+[node name="Camera2D" type="Camera2D" parent="Bear"]
+position = Vector2(-1, 0)
+zoom = Vector2(2, 2)
+
 [node name="beePollen" parent="." instance=ExtResource("4_3l5uh")]
 position = Vector2(104, 500)
 
@@ -78,6 +82,13 @@ offset_top = 457.0
 offset_right = 174.0
 offset_bottom = 480.0
 text = "Pollen Collector Bee"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1429.0
+offset_top = 327.0
+offset_right = 1532.0
+offset_bottom = 350.0
+text = "Fly Instructor"
 
 [connection signal="body_entered" from="beePollen" to="Bear" method="_on_bee_pollen_body_entered"]
 [connection signal="body_entered" from="beeFly" to="Bear" method="_on_bee_fly_body_entered"]

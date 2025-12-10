@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://ue2e4xh2skvh"]
+
+[ext_resource type="Script" uid="uid://cgalheab7m36d" path="res://flappy_mini_game/flappy_bear.gd" id="1_fwm0w"]
+[ext_resource type="Texture2D" uid="uid://m712a4cvpcce" path="res://animations/bear/fly.png" id="2_by57j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7d1c"]
+atlas = ExtResource("2_by57j")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbidr"]
+atlas = ExtResource("2_by57j")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n56we"]
+atlas = ExtResource("2_by57j")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hx4u"]
+atlas = ExtResource("2_by57j")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx2hv"]
+atlas = ExtResource("2_by57j")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlrah"]
+atlas = ExtResource("2_by57j")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bt08"]
+atlas = ExtResource("2_by57j")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3haua"]
+atlas = ExtResource("2_by57j")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lkwn"]
+atlas = ExtResource("2_by57j")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3sye7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7d1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbidr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n56we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hx4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx2hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlrah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bt08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3haua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lkwn")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_by57j"]
+radius = 11.0
+height = 22.0
+
+[node name="FlappyBear" type="CharacterBody2D"]
+script = ExtResource("1_fwm0w")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 1)
+sprite_frames = SubResource("SpriteFrames_3sye7")
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.0399968
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_by57j")

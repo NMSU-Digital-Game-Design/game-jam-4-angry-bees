@@ -1,8 +1,10 @@
-extends StaticBody2D
+extends Node2D
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var pollen_spawn: Marker2D = $PollenSpawn
-
 @onready var release_pollen_timer: Timer = $ReleasePollenTimer
+
+@export var flower_frame = 1
 var times_shaken: int = 0
 var number_of_shakes_needed: int
 var can_be_shaken: bool = true
@@ -17,9 +19,11 @@ func _ready() -> void:
 	pollen_amount = randi() % pollen_max
 	print(pollen_amount)
 	print(number_of_shakes_needed)
+	sprite_2d.frame_coords = Vector2(0, flower_frame)
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("select") and player_deteched:
 		shake()
+	
 			
 func shake():
 	if can_be_shaken:
@@ -48,7 +52,9 @@ func timer_time_out():
 func _on_detect_player_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_deteched = true
+		sprite_2d.frame_coords = Vector2(1, flower_frame)
 
 func _on_detect_player_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_deteched = false
+		sprite_2d.frame_coords = Vector2(0, flower_frame)

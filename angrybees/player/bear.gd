@@ -12,16 +12,16 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		$AnimatedSprite2D.play("walk")
 		$AnimatedSprite2D.flip_h = false
-		dir.x += 1
+		dir.x += speed
 	if Input.is_action_pressed("left"):
 		$AnimatedSprite2D.play("walk")
 		$AnimatedSprite2D.flip_h = true
-		dir.x -= 1
+		dir.x -= speed
 	if Input.is_action_pressed("down"):
-		dir.y += 1
+		dir.y += speed
 	if Input.is_action_pressed("up"):
 		$AnimatedSprite2D.play("fly")
-		dir.y -= 1
+		dir.y -= speed
 	if Input.is_action_just_released("right") || Input.is_action_just_released("left"):
 		$AnimatedSprite2D.play("idle")
 

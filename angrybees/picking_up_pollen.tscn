@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://da3demaepavyo"]
+
+[ext_resource type="Script" uid="uid://cef2vjdog0qm" path="res://pollen_mini_game/picking_up_pollen.gd" id="1_o712e"]
+[ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://pollen_mini_game/flower.tscn" id="2_pjn3p"]
+[ext_resource type="PackedScene" uid="uid://ce1g4ap0kr6ig" path="res://player/bear.tscn" id="2_u1jpl"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1bvp3"]
+
+[node name="PickingUpPollen" type="Node2D"]
+script = ExtResource("1_o712e")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PollenLabel" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pollen: 0"
+
+[node name="TimeLeftLabel" type="Label" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Time Left: "
+
+[node name="Flowers" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(99.1634, 647.519)
+shape = SubResource("WorldBoundaryShape2D_1bvp3")
+
+[node name="Flower" parent="." instance=ExtResource("2_pjn3p")]
+position = Vector2(52, 412)
+
+[node name="Flower2" parent="." instance=ExtResource("2_pjn3p")]
+position = Vector2(588, 412)
+flower_frame = 4
+
+[node name="Flower3" parent="." instance=ExtResource("2_pjn3p")]
+position = Vector2(1106, 412)
+
+[node name="Flower4" parent="." instance=ExtResource("2_pjn3p")]
+position = Vector2(-404, 412)
+
+[node name="Flower5" parent="." instance=ExtResource("2_pjn3p")]
+position = Vector2(1352, 412)
+
+[node name="Bear" parent="." instance=ExtResource("2_u1jpl")]
+position = Vector2(327, 181)
+
+[node name="Camera2D" type="Camera2D" parent="Bear"]
+
+[node name="TimeLeft" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TimeLeft" to="." method="_on_time_left_timeout"]

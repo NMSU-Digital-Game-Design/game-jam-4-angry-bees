@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce1g4ap0kr6ig"]
+[gd_scene load_steps=10 format=3 uid="uid://ce1g4ap0kr6ig"]
 
 [ext_resource type="Script" uid="uid://cejjd8k5cuida" path="res://player/bear.gd" id="1_jiicd"]
 [ext_resource type="Texture2D" uid="uid://bhapy7atoq2g5" path="res://animations/bear/idle.png" id="2_fk0x7"]
@@ -56,12 +56,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Bear" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fk0x7"]
+radius = 10.9975
+height = 37.9912
+
+[node name="Bear" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_jiicd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(8, -15)
 sprite_frames = SubResource("SpriteFrames_jiicd")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_fk0x7")

@@ -9,7 +9,7 @@ radius = 31.0161
 [sub_resource type="CircleShape2D" id="CircleShape2D_y864m"]
 radius = 59.0762
 
-[node name="Pollen" type="RigidBody2D"]
+[node name="Pollen" type="RigidBody2D" groups=["pollen"]]
 script = ExtResource("1_xayy5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

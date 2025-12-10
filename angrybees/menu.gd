@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://sceneTest.tscn")
+	get_tree().change_scene_to_file("res://picking_up_pollen.tscn")
 
 
 func _on_how_to_play_pressed() -> void:

@@ -1,0 +1,171 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl8s6aanodunk"]
+
+[ext_resource type="Script" uid="uid://ckg3l8iy0bsn0" path="res://flappy_mini_game/flappy_bear_mini_game.gd" id="1_1exri"]
+[ext_resource type="Texture2D" uid="uid://qvato7wcln46" path="res://AssetsImages/mainSceneBkg.png" id="1_dl1tx"]
+[ext_resource type="PackedScene" uid="uid://d2hay33h85dlp" path="res://flappy_mini_game/wall.tscn" id="2_1exri"]
+[ext_resource type="PackedScene" uid="uid://ue2e4xh2skvh" path="res://flappy_mini_game/flappy_bear.tscn" id="2_rxdco"]
+[ext_resource type="Texture2D" uid="uid://c1fhogvuhaomh" path="res://AssetsImages/land_assets.png" id="5_40onl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgyb6"]
+size = Vector2(182, 82)
+
+[node name="FlappyBearMiniGame" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_1exri")
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReadyLabel" type="Label" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "GET READY"
+
+[node name="GetReadyTimers" type="Node" parent="UI"]
+
+[node name="GetReadyTime" type="Timer" parent="UI/GetReadyTimers"]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="SetTimer" type="Timer" parent="UI/GetReadyTimers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="GoTimer" type="Timer" parent="UI/GetReadyTimers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="LeveL" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="LeveL"]
+
+[node name="Parallax2D" type="Parallax2D" parent="LeveL/ParallaxLayer"]
+scroll_offset = Vector2(366, 828)
+
+[node name="MainSceneBkg" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(962, 540)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg2" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(-957, 540)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg3" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(2875, 537)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg4" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(962, -435)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg5" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(-957, -435)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg6" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(2875, -438)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg7" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(6691, 537)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg8" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(4772, 537)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg9" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(8604, 534)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg10" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(6691, -438)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg11" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(4772, -438)
+texture = ExtResource("1_dl1tx")
+
+[node name="MainSceneBkg12" type="Sprite2D" parent="LeveL/ParallaxLayer/Parallax2D"]
+position = Vector2(8604, -441)
+texture = ExtResource("1_dl1tx")
+
+[node name="FlappyBear" parent="LeveL" groups=["player"] instance=ExtResource("2_rxdco")]
+position = Vector2(-345, 198)
+
+[node name="Camera2D" type="Camera2D" parent="LeveL/FlappyBear"]
+limit_top = 0
+limit_bottom = 640
+
+[node name="Walls" type="Node" parent="LeveL"]
+
+[node name="Wall" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(144, 43)
+
+[node name="Wall2" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(564, -16)
+
+[node name="Wall3" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(990, 236)
+
+[node name="Wall4" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(1531, -102)
+
+[node name="Wall5" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(2042, 205)
+
+[node name="Wall6" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(2553, -119)
+
+[node name="Wall7" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(2987, 40)
+
+[node name="Wall8" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(3401, 223)
+
+[node name="Wall9" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(3978, 20)
+
+[node name="Wall10" parent="LeveL/Walls" instance=ExtResource("2_1exri")]
+position = Vector2(4503, 360)
+
+[node name="StartingLocation" type="Marker2D" parent="LeveL"]
+position = Vector2(-397.053, 308.039)
+
+[node name="HoneyPt" type="Area2D" parent="LeveL"]
+position = Vector2(4581, 651)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="LeveL/HoneyPt"]
+texture = ExtResource("5_40onl")
+region_enabled = true
+region_rect = Rect2(114.42, 186, 144.58, 70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeveL/HoneyPt"]
+shape = SubResource("RectangleShape2D_xgyb6")
+
+[connection signal="timeout" from="UI/GetReadyTimers/GetReadyTime" to="." method="_on_get_ready_time_timeout"]
+[connection signal="timeout" from="UI/GetReadyTimers/SetTimer" to="." method="_on_set_timer_timeout"]
+[connection signal="timeout" from="UI/GetReadyTimers/GoTimer" to="." method="_on_go_timer_timeout"]
+[connection signal="body_entered" from="LeveL/HoneyPt" to="." method="_on_honey_pt_body_entered"]

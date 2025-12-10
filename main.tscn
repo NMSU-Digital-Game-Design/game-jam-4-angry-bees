@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://w7nhxt2woom6"]
+
+[ext_resource type="Script" uid="uid://dmlaijl8abqws" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dpyjdyn6nf1ir" path="res://beebear w guards.png" id="2_0xm2m"]
+[ext_resource type="FontFile" uid="uid://bbg3naifyxiq4" path="res://Xolonium-Regular.ttf" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cp8hhfn41mjny" path="res://salmon button.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://8m2rjg5d4ljy" path="res://pollen button.png" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://owu77nxm1s50" path="res://sus_meter.tscn" id="6_7mycd"]
+
+[sub_resource type="Theme" id="Theme_0xm2m"]
+
+[sub_resource type="FontVariation" id="FontVariation_h2yge"]
+base_font = ExtResource("3_h2yge")
+
+[sub_resource type="Theme" id="Theme_lquwl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(578, 326.5)
+scale = Vector2(0.744792, 0.625977)
+texture = ExtResource("2_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Heading" type="Label" parent="UI"]
+offset_left = 256.0
+offset_top = 11.0
+offset_right = 777.0
+offset_bottom = 78.0
+theme = SubResource("Theme_0xm2m")
+theme_override_colors/font_color = Color(0.847059, 0.72549, 0.505882, 1)
+theme_override_fonts/font = SubResource("FontVariation_h2yge")
+theme_override_font_sizes/font_size = 26
+text = "What Would You Like To Have For Lunch?"
+
+[node name="SalmonButton" type="TextureButton" parent="UI"]
+offset_left = 156.0
+offset_top = 558.0
+offset_right = 856.0
+offset_bottom = 833.0
+scale = Vector2(0.23, 0.23)
+texture_normal = ExtResource("4_lquwl")
+texture_pressed = ExtResource("4_lquwl")
+texture_hover = ExtResource("4_lquwl")
+
+[node name="PollenButton" type="TextureButton" parent="UI"]
+custom_minimum_size = Vector2(160, 64)
+offset_left = 827.0
+offset_top = 563.0
+offset_right = 1449.0
+offset_bottom = 765.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_7mycd")
+texture_pressed = ExtResource("5_7mycd")
+texture_hover = ExtResource("5_7mycd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 420.0
+offset_top = 552.0
+offset_right = 733.0
+offset_bottom = 624.0
+theme = SubResource("Theme_lquwl")
+theme_type_variation = &"HeaderLarge"
+
+[node name="SusMeter" parent="UI" instance=ExtResource("6_7mycd")]
+offset_left = 73.0
+offset_top = 65.0
+offset_right = -921.0
+offset_bottom = -522.0

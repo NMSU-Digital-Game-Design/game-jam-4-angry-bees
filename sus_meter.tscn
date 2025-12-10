@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://owu77nxm1s50"]
+
+[ext_resource type="Script" uid="uid://bgwhgfln60y0s" path="res://sus_meter.gd" id="1_28cdw"]
+[ext_resource type="Texture2D" uid="uid://bg455k35a37j" path="res://susbee.webp" id="2_j7vl7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7vl7"]
+bg_color = Color(0.94902, 0.458824, 0.415686, 1)
+
+[node name="SusMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28cdw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 40.0
+
+[node name="BeeIcon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_j7vl7")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Bar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 20)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_j7vl7")
+max_value = 3.0
+step = 1.0
+show_percentage = false

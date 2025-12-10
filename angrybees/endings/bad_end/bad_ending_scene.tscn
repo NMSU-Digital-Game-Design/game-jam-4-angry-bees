@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqv4bh7ywac6x"]
+
+[ext_resource type="Script" uid="uid://dpmflk17lx6s3" path="res://endings/bad_end/image_path.gd" id="1_1gi6v"]
+[ext_resource type="Script" uid="uid://po0wyo5qxrg" path="res://endings/bad_end/bad_ending_scene.gd" id="1_phdgc"]
+[ext_resource type="Texture2D" uid="uid://cinmtjhy6bdhg" path="res://AssetsImages/loseEndScene.png" id="2_eqqht"]
+[ext_resource type="PackedScene" uid="uid://ccqvldl78ghcm" path="res://audio/youre_not_supposed_to_be_here.tscn" id="3_eqqht"]
+
+[sub_resource type="Curve2D" id="Curve2D_phdgc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 580, 77, 0, 0, 0, 0, 577, 331)
+}
+point_count = 2
+
+[node name="BadEndingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phdgc")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_phdgc")
+
+[node name="ImagePath" type="PathFollow2D" parent="Path2D"]
+position = Vector2(580, 77)
+rotation = 1.58261
+loop = false
+script = ExtResource("1_1gi6v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/ImagePath"]
+position = Vector2(35.0421, -26.9454)
+rotation = 4.71239
+scale = Vector2(0.600754, 0.600754)
+texture = ExtResource("2_eqqht")
+
+[node name="YoureNotSupposedToBeHere" parent="." instance=ExtResource("3_eqqht")]
+
+[node name="FoundLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 376.0
+offset_top = 286.0
+offset_right = 822.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 52
+text = "YOU GOT FOUND!"
+
+[node name="MainMenu" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 376.0
+offset_top = 362.0
+offset_right = 822.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
+[connection signal="finished" from="YoureNotSupposedToBeHere" to="." method="_on_youre_not_supposed_to_be_here_finished"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

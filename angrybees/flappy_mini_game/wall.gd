@@ -13,5 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_collision_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://endings/bad_end/bad_ending_scene.tscn")
 		print("Hit!")
 		mini_game_over.emit()

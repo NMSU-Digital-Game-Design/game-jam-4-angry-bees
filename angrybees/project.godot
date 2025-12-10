@@ -15,14 +15,6 @@ run/main_scene="uid://bl70fdk1ry3fv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-PlayerVariable="*res://player_variable.gd"
-
-[global_group]
-
-player=""
-
 [input]
 
 left={

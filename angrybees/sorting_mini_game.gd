@@ -57,7 +57,7 @@ func _on_pollen_path_follow_pollen_info(pollen_type) -> void:
 
 func end_mini_game():
 	print("sorting mini-game ended")
-	get_tree().change_scene_to_file("res://flappy_mini_game/flappy_bear_mini_game.tscn")
+	get_tree().change_scene_to_file("res://sceneTest.tscn")
 
 ##### ANIMATIONS ######
 func go_left():

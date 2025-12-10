@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce1g4ap0kr6ig"]
+[gd_scene load_steps=12 format=3 uid="uid://ce1g4ap0kr6ig"]
 
 [ext_resource type="Script" uid="uid://cejjd8k5cuida" path="res://player/bear.gd" id="1_jiicd"]
 [ext_resource type="Texture2D" uid="uid://bhapy7atoq2g5" path="res://animations/bear/idle.png" id="2_fk0x7"]
+[ext_resource type="Texture2D" uid="uid://y7stwwplxe5u" path="res://AssetsImages/susBar.png" id="3_6iw26"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6iw26"]
 atlas = ExtResource("2_fk0x7")
@@ -60,6 +61,10 @@ animations = [{
 radius = 10.9975
 height = 37.9912
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv57a"]
+atlas = ExtResource("3_6iw26")
+region = Rect2(0, 258.5, 256, 63)
+
 [node name="Bear" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_jiicd")
 
@@ -71,3 +76,63 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_fk0x7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="susBar0" type="TextureRect" parent="Camera2D"]
+offset_left = -128.0
+offset_top = -170.0
+offset_right = 128.0
+offset_bottom = -98.0
+texture = SubResource("AtlasTexture_hv57a")
+
+[node name="susBar1" type="TextureRect" parent="Camera2D"]
+offset_left = -128.0
+offset_top = -170.0
+offset_right = 128.0
+offset_bottom = -98.0
+texture = SubResource("AtlasTexture_hv57a")
+
+[node name="susBar2" type="TextureRect" parent="Camera2D"]
+offset_left = -128.0
+offset_top = -170.0
+offset_right = 128.0
+offset_bottom = -98.0
+texture = SubResource("AtlasTexture_hv57a")
+
+[node name="susBar3" type="TextureRect" parent="Camera2D"]
+offset_left = -128.0
+offset_top = -170.0
+offset_right = 128.0
+offset_bottom = -98.0
+texture = SubResource("AtlasTexture_hv57a")
+
+[node name="susBar4" type="TextureRect" parent="Camera2D"]
+offset_left = -128.0
+offset_top = -170.0
+offset_right = 128.0
+offset_bottom = -98.0
+texture = SubResource("AtlasTexture_hv57a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="needPollen" type="Label" parent="."]
+offset_left = -114.0
+offset_top = -74.0
+offset_right = 141.0
+offset_bottom = -51.0
+text = "Need Pollen! Visit the Pollen Bee."
+
+[node name="taskComplete" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Task Completed."
+
+[node name="taskSort" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Task Completed. Sort the Pollen."
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

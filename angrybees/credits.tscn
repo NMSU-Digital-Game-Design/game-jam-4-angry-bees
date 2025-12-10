@@ -34,6 +34,18 @@ rotation = -0.39205
 scale = Vector2(1.14253, 0.789832)
 text = "Emma"
 
+[node name="Label" type="Label" parent="Emma"]
+offset_left = -2.55857
+offset_top = 35.4609
+offset_right = 91.4414
+offset_bottom = 162.461
+theme_override_font_sizes/font_size = 9
+text = "- How to
+- Flowers
+- Pollen
+- Bees
+- Queen Bee"
+
 [node name="Renae" type="Label" parent="."]
 offset_left = 513.0
 offset_top = 215.0
@@ -58,17 +70,37 @@ offset_bottom = 411.0
 rotation = -0.424429
 text = "Naziya"
 
+[node name="Label" type="Label" parent="Naziya"]
+layout_mode = 0
+offset_left = -8.12177
+offset_top = 32.5428
+offset_right = 69.8782
+offset_bottom = 63.5428
+theme_override_font_sizes/font_size = 10
+text = "- Flappy Bear
+- Honey Stealing"
+
 [node name="Victoria" type="Label" parent="."]
-offset_left = 624.0
-offset_top = 349.0
-offset_right = 722.0
-offset_bottom = 450.0
+offset_left = 637.0
+offset_top = 343.0
+offset_right = 678.0
+offset_bottom = 364.0
 rotation = -0.387478
 scale = Vector2(1.08707, 1.02884)
 theme_override_font_sizes/font_size = 11
-text = "Victoria
-- Assets
-- Scenes
-- Animations"
+text = "Victoria"
+
+[node name="Label" type="Label" parent="Victoria"]
+layout_mode = 0
+offset_left = -12.0966
+offset_top = 21.0287
+offset_right = 53.9034
+offset_bottom = 123.029
+theme_override_font_sizes/font_size = 8
+text = "- Title, Credits, End, 
+Main Game Scenes
+- Bear
+- Land Assets
+- Main Scene Bkg"
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

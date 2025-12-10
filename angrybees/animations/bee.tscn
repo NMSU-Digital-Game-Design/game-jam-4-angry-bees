@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0w0528fnt86m"]
+
+[ext_resource type="Texture2D" uid="uid://digbfdxhcco1w" path="res://animations/bee/Bee_Idle_1.png" id="1_ivbrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibv3c"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euani"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw4e4"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4qag"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ebbp"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxvuv"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbeap"]
+atlas = ExtResource("1_ivbrn")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84t60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibv3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euani")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw4e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4qag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ebbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxvuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbeap")
+}],
+"loop": true,
+"name": &"bee",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivbrn"]
+height = 32.0
+
+[node name="bee" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_84t60")
+animation = &"bee"
+frame_progress = 0.725033
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.60778
+shape = SubResource("CapsuleShape2D_ivbrn")

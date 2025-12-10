@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bomrgu3x76df8" path="res://pollen_mini_game/pollen.tscn" id="1_rfqgp"]
 [ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://pollen_mini_game/flower.tscn" id="2_7pwmh"]
-[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_enbag"]
+[ext_resource type="PackedScene" uid="uid://ce1g4ap0kr6ig" path="res://player/bear.tscn" id="3_enbag"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nk7og"]
 normal = Vector2(0.0116271, -0.999932)

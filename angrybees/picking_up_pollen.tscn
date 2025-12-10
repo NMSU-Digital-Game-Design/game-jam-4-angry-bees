@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://da3demaepavyo"]
 
-[ext_resource type="Script" path="res://pollen_mini_game/picking_up_pollen.gd" id="1_o712e"]
+[ext_resource type="Script" uid="uid://cef2vjdog0qm" path="res://pollen_mini_game/picking_up_pollen.gd" id="1_o712e"]
 [ext_resource type="Texture2D" uid="uid://bek52mwysos51" path="res://pollen_mini_game/assets/background.png" id="2_io8py"]
 [ext_resource type="PackedScene" uid="uid://b54d40xul4t18" path="res://pollen_mini_game/flower.tscn" id="2_pjn3p"]
 [ext_resource type="PackedScene" uid="uid://ce1g4ap0kr6ig" path="res://player/bear.tscn" id="2_u1jpl"]
@@ -94,7 +94,7 @@ shape = SubResource("WorldBoundaryShape2D_1bvp3")
 z_index = 1
 position = Vector2(1294, 208)
 
-[node name="Camera2D" type="Camera2D" parent="Bear"]
+[node name="Camera2D2" type="Camera2D" parent="Bear"]
 limit_left = -390
 limit_top = -190
 limit_right = 1510

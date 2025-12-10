@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://ouau77857vi1"]
+[gd_scene load_steps=7 format=4 uid="uid://ouau77857vi1"]
 
 [ext_resource type="Texture2D" uid="uid://qvato7wcln46" path="res://AssetsImages/mainSceneBkg.png" id="1_vqu65"]
 [ext_resource type="Texture2D" uid="uid://c1fhogvuhaomh" path="res://AssetsImages/land_assets.png" id="2_wijv2"]
 [ext_resource type="PackedScene" uid="uid://ce1g4ap0kr6ig" path="res://player/bear.tscn" id="3_conwe"]
+[ext_resource type="PackedScene" uid="uid://b0w0528fnt86m" path="res://animations/bee.tscn" id="4_3l5uh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijv2"]
 texture = ExtResource("2_wijv2")
@@ -16,6 +17,9 @@ texture_region_size = Vector2i(64, 64)
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+1:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_conwe"]
 tile_size = Vector2i(64, 64)
@@ -49,3 +53,16 @@ centered = false
 
 [node name="Bear" parent="." instance=ExtResource("3_conwe")]
 position = Vector2(404, 427)
+
+[node name="beePollen" parent="." instance=ExtResource("4_3l5uh")]
+position = Vector2(104, 500)
+
+[node name="beeFly" parent="." instance=ExtResource("4_3l5uh")]
+position = Vector2(1477, 378)
+
+[node name="beeSort" parent="." instance=ExtResource("4_3l5uh")]
+position = Vector2(147, 159)
+
+[connection signal="body_entered" from="beePollen" to="Bear" method="_on_bee_pollen_body_entered"]
+[connection signal="body_entered" from="beeFly" to="Bear" method="_on_bee_fly_body_entered"]
+[connection signal="body_entered" from="beeSort" to="Bear" method="_on_bee_sort_body_entered"]

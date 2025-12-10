@@ -31,6 +31,7 @@ func shake():
 		print("Shaken: ", times_shaken)
 		if times_shaken >= number_of_shakes_needed:
 			print("Shaking")
+			sprite_2d.frame_coords = Vector2(0, flower_frame)
 			release_pollen_timer.start()
 			can_be_shaken = false
 	else:
@@ -51,8 +52,9 @@ func timer_time_out():
 
 func _on_detect_player_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		player_deteched = true
-		sprite_2d.frame_coords = Vector2(1, flower_frame)
+		if can_be_shaken:
+			player_deteched = true
+			sprite_2d.frame_coords = Vector2(1, flower_frame)
 
 func _on_detect_player_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

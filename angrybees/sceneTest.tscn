@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=4 uid="uid://ouau77857vi1"]
+
+[ext_resource type="Texture2D" uid="uid://qvato7wcln46" path="res://Assets&Images/mainSceneBkg.png" id="1_vqu65"]
+[ext_resource type="Texture2D" uid="uid://c1fhogvuhaomh" path="res://Assets&Images/land_assets.png" id="2_wijv2"]
+[ext_resource type="PackedScene" uid="uid://ctm0cx471tbyr" path="res://bear.tscn" id="3_conwe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijv2"]
+texture = ExtResource("2_wijv2")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, -32, -15.8053, 24.2724, -16.9342, 32, -11.854, 32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -14.6763, 32, -15.2408, 32, 32, -32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.854, 32, -12.4184, 18.6276, -13.5474, 2.82237, -24.2724, -5.64474, -25.4013, -14.6763, 32, -15.2408, 32, 32)
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_conwe"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wijv2")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(1740, 320)
+scale = Vector2(0.602083, 0.596296)
+tile_map_data = PackedByteArray("AABs/xEAAAABAAAAAABt/xEAAAABAAAAAABu/xEAAAABAAAAAABv/xEAAAABAAAAAABw/xEAAAABAAAAAABx/xEAAAABAAAAAABy/xEAAAABAAAAAABz/xEAAAABAAAAAAB0/xEAAAABAAAAAAB1/xEAAAABAAAAAAB2/xEAAAABAAAAAAB3/xEAAAABAAAAAAB4/xEAAAABAAAAAAB5/xEAAAABAAAAAAB6/xEAAAABAAAAAAB7/xEAAAABAAAAAADc/wQAAAABAAAAAADd/wQAAAABAAAAAADe/wQAAAABAAAAAADf/wQAAAABAAAAAADg/wQAAAABAAAAAADh/wQAAAABAAAAAADi/wQAAAABAAAAAADj/wQAAAABAAAAAADk/wQAAAABAAAAAADV/wUAAAABAAAAAADW/wUAAAABAAAAAADX/wUAAAABAAAAAADY/wUAAAABAAAAAADZ/wUAAAABAAAAAADa/wUAAAABAAAAAADl/wQAAAABAAAAAADm/wQAAAABAAAAAADn/wQAAAABAAAAAADo/wQAAAABAAAAAADp/wQAAAABAAAAAADq/wQAAAABAAAAAADr/wQAAAABAAAAAADs/wQAAAABAAAAAADx////AAABAAAAAADx/wAAAAABAAAAAADx/wEAAAABAAAAAADx/wIAAAABAAAAAADx/wMAAAABAAAAAADx/wQAAAABAAAAAADx/wUAAAABAAAAAADx/wYAAAABAAAAAADx/wcAAAABAAAAAAD0/wIAAAABAAAAAAD1/wIAAAABAAAAAAD2/wIAAAABAAAAAAD3/wIAAAABAAAAAAD4/wIAAAABAAAAAAD5/wIAAAABAAAAAAD8/wEAAAABAAAAAADu/wIAAAABAAAAAADv/wIAAAABAAAAAADv/wEAAAABAAAAAADZ/wIAAAABAAAAAADY/wIAAAABAAAAAADW/wAAAAABAAAAAADV/wAAAAABAAAAAADU//7/AAABAAAAAADW//z/AAABAAAAAADX//z/AAABAAAAAADY//z/AAABAAAAAADZ//z/AAABAAAAAADa//z/AAABAAAAAADb//z/AAABAAAAAADc//z/AAABAAAAAADd//z/AAABAAAAAADe//z/AAABAAAAAADf//z/AAABAAAAAADg//z/AAABAAAAAADh//z/AAABAAAAAADk//r/AAABAAAAAADm//r/AAABAAAAAADp//n/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_conwe")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, -3)
+scale = Vector2(0.602083, 0.596296)
+texture = ExtResource("1_vqu65")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1132, 0)
+scale = Vector2(0.602083, 0.596296)
+texture = ExtResource("1_vqu65")
+centered = false
+
+[node name="Bear" parent="." instance=ExtResource("3_conwe")]
+position = Vector2(404, 428)

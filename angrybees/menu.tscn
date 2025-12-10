@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl70fdk1ry3fv"]
+
+[ext_resource type="Texture2D" uid="uid://x8jd54jupgq7" path="res://Assets&Images/menuBkg.png" id="1_lti8b"]
+[ext_resource type="Script" path="res://menu.gd" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://g44dv67uxn5i" path="res://Assets&Images/buttons.png" id="2_ouk20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mae5d"]
+atlas = ExtResource("2_ouk20")
+region = Rect2(0, 0, 256, 63.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hy44"]
+atlas = ExtResource("2_ouk20")
+region = Rect2(0, 68.5, 256, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
+atlas = ExtResource("2_ouk20")
+region = Rect2(0, 125.5, 256, 67)
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_mae5d")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+texture = ExtResource("1_lti8b")
+expand_mode = 1
+
+[node name="start" type="TextureButton" parent="."]
+offset_left = 472.0
+offset_top = 297.0
+offset_right = 728.0
+offset_bottom = 360.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_mae5d")
+
+[node name="howToPlay" type="TextureButton" parent="."]
+offset_left = 477.0
+offset_top = 454.0
+offset_right = 733.0
+offset_bottom = 516.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_4hy44")
+
+[node name="credits" type="TextureButton" parent="."]
+offset_left = 473.0
+offset_top = 581.0
+offset_right = 729.0
+offset_bottom = 648.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_ouk20")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="howToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

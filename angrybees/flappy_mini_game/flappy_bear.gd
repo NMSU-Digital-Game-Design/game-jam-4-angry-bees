@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var gravity := 900.0
 @export var flap_strength := -300.0
-@export var forward_speed := 50.0
+@export var forward_speed := 100.0
 
 #func _ready():
 	# Start flappy bear in the vertical middle of the screen
@@ -24,12 +24,3 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Keep inside screen
-	stay_in_screen()
-
-
-func stay_in_screen():
-	var screen_size = get_viewport_rect().size
-
-	# Clamp X and Y so bear never escapes
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
